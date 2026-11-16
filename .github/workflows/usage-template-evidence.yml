@@ -24,10 +24,10 @@ jobs:
     name: PR ${{ matrix.pr }} exact head
     env:
       CI: 'true'
-      CCS_HOME: ${{ runner.temp }}/ccs-evidence-${{ matrix.pr }}
-      BUN_INSTALL_CACHE_DIR: ${{ runner.temp }}/bun-evidence-${{ matrix.pr }}
+      CCS_HOME: /tmp/ccs-evidence-${{ matrix.pr }}
+      BUN_INSTALL_CACHE_DIR: /tmp/bun-evidence-${{ matrix.pr }}
       HUSKY: '0'
-      EVIDENCE: ${{ runner.temp }}/usage-evidence-${{ matrix.pr }}
+      EVIDENCE: /tmp/usage-evidence-${{ matrix.pr }}
     steps:
       - uses: actions/checkout@v4
         with:
